@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+	
+	<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	
+	
+body {
+  background-image: url("{{ url_for('static',filename='images/allot13.jpg')}}");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+
+.w3-lobster {
+  font-family: "Lobster", serif;
+}
+
+.w3-allerta {
+  font-family: "Allerta Stencil", Sans-serif;
+}
+
+.w3-myfont {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+
+.button {
+  
+  border: none;
+  color: white;
+  padding: 7px 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+}
+
+.button1 {
+	background-color: #ffc100;
+  
+  color: black; 
+}
+
+.button1:hover {
+  background-color: red;
+  color: white;
+}
+.row1{
+	margin-left: 5%;
+}
+.gen{
+	padding: 20px;
+}
+.gen1{
+	padding: 60px;
+}
+</style>
+
+</head>
+<body>
+
+
+	<!-- Navbar -->
+<nav class="navbar  navbar-dark bg-dark fixed-top p-2 pl-3">
+  <a class="navbar-brand" href="#"><h2>Welcome</h2> </a>
+  <div class="row">
+        <div class="col-md-3"></div><form action="/" method=post><button type="submit" name="template" class="button button1 pr-3 mr-2" style="font-size: 20px;">Download Template</button></form>
+  </div>
+
+</nav>
+<br><br><br>
+<div>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+  {% endif %}
+{% endwith %}
+</div>
+	<!-- Option entry module -->
+<br><br>
+	
+		
+			<div class="w3-container w3-lobster w3-center" style="text-shadow: 3px 2px red;">
+			<p style="font-size: 60px;">Upload Your Question Bank</p>
+			</div>
+		
+	<br><br>	
+		
+	<form action="/" method=post enctype=multipart/form-data>
+	
+			
+
+	<div class="container" style="height:300px;">
+		<br>
+	
+    <br>
+  	<table class="table table-hover" id="myTable" style=" background-color:rgba(238, 107, 216, 0.5);">
+    <thead class="text-center">
+      <tr>
+        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "> <label for="cc">Select Semester:</label>
+          <select id="cc" name="course_code">
+            <option value="1st">CS110</option>
+            <option value="2nd">CS120</option>
+            <option value="3rd">CS130</option>
+            <option value="4th">CS140</option>
+            <option value="5th">CS150</option>
+            <option value="6th">CS160</option>
+            
+          </select></p></div></th>
+        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "><input type=file name=file></p></div></th>
+        <th class="w3-center"><div class=" w3-lobster "><p style="font-size: 22px; "><input type=submit value=Upload></p></div></th>
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+      
+      
+    </tbody>
+  </table>
+  <div style="font-size: 18px;">*Retain the same spelling of excel sheets and column names as in template. </div>
+</div>		
+<br>	
+</form>
+</body>
+</html>
