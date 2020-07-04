@@ -51,12 +51,12 @@ def mail(x):
     
     print(email,ans,"ufff")
                 
-    fromaddr = "nandakrishna.achar@gmail.com"
+    fromaddr = "from-email@gmail.com"
     toaddr = email
     
     msg = MIMEMultipart() 
     
-    msg['From'] = "nandakrishna.achar@gmail.com"
+    msg['From'] = "from-email@gmail.com"
     msg['To'] = email
     msg['Subject'] = "Test Results" 
     body = "Answers of all students are recorded here : " 
@@ -76,7 +76,7 @@ def mail(x):
     
     s = smtplib.SMTP('smtp.gmail.com', 587) 
     s.starttls() 
-    s.login(fromaddr, "nanda1999007") 
+    s.login(fromaddr, **********) // 
     text = msg.as_string() 
     s.sendmail(fromaddr, toaddr, text) 
     s.quit() 
